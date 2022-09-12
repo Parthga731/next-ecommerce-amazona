@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 import Cookies from 'js-cookie';
 
-export const Store = createContext();
+export const Store = createContext('cart');
 
 const cartCookies: string | undefined = Cookies.get('cart');
 // console.log(cartCookies);

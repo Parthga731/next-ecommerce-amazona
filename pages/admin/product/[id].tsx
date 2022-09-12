@@ -87,11 +87,12 @@ export default function AdminProductEditScreen() {
       } = await axios('/api/admin/cloudinary-sign');
 
       const file = e.target.files[0];
+      const cloudinaryApiKey: any = process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY;
       const formData = new FormData();
       formData.append('file', file);
       formData.append('signature', signature);
       formData.append('timestamp', timestamp);
-      formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY);
+      formData.append('api_key', String(cloudinaryApiKey));
       const { data } = await axios.post(url, formData);
       dispatch({ type: 'UPLOAD_SUCCESS' });
       setValue(imageField, data.secure_url);

@@ -12,6 +12,8 @@ export default function ProductItem({ product, addToCartHandler }: any) {
             src={product.image}
             alt={product.name}
             className='rounded shadow'
+            height={300}
+            width={300}
           />
         </a>
       </Link>
