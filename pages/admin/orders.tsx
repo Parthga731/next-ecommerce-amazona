@@ -29,7 +29,6 @@ export default function AdminOrderScreen() {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(`/api/admin/orders`);
-        console.log(data);
         // if(data)
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {

@@ -11,7 +11,6 @@ export default function LoginScreen() {
   const { data: session } = useSession();
   const router = useRouter();
   const { redirect }: any = router.query;
-  console.log('register redircet', redirect);
 
   const {
     handleSubmit,

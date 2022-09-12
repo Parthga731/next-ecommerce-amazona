@@ -13,7 +13,6 @@ export default function LoginScreen() {
 
   const router = useRouter();
   const { redirect }: any = router.query;
-  console.log('login redircet', redirect);
 
   useEffect(() => {
     if (session?.user) {

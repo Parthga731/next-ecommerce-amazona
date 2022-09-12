@@ -28,7 +28,6 @@ const Home: NextPage = ({ products }: any) => {
     toast.success('Product added to the cart');
   };
 
-  console.log(products);
   return (
     <Layout title='Home Page'>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4'>
@@ -47,7 +46,6 @@ const Home: NextPage = ({ products }: any) => {
 export async function getServerSideProps() {
   await db.connect();
   const products = await Product.find().lean();
-  // console.log(products);
 
   return {
     props: {
