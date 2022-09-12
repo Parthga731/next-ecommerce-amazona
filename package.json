@@ -9,14 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.0",
+    "@heroicons/react": "^2.0.10",
+    "@paypal/react-paypal-js": "^7.8.1",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "js-cookie": "^3.0.1",
+    "mongoose": "^6.5.4",
     "next": "12.2.5",
+    "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.34.2",
     "react-toastify": "^9.0.8"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/js-cookie": "^3.0.2",
     "@types/node": "18.7.14",
-    "@types/react": "18.0.18",
+    "@types/react": "^18.0.18",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
