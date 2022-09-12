@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +8,7 @@ export default function ProductItem({ product, addToCartHandler }: any) {
     <div className='card'>
       <Link href={`/product/${product.slug}`}>
         <a>
-          <img
+          <Image
             src={product.image}
             alt={product.name}
             className='rounded shadow'

@@ -58,7 +58,7 @@ function OrderScreen() {
       order,
       successPay,
       loadingPay,
-      //   loadingDeliver,
+      loadingDeliver,
       successDeliver,
     },
     dispatch,
@@ -100,7 +100,7 @@ function OrderScreen() {
             currency: 'USD',
           },
         });
-        paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
+        // paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
       };
       loadPaypalScript();
     }
@@ -153,20 +153,20 @@ function OrderScreen() {
     toast.error(getError(err));
   }
 
-  //   async function deliverOrderHandler() {
-  //     try {
-  //       dispatch({ type: 'DELIVER_REQUEST' });
-  //       const { data } = await axios.put(
-  //         `/api/admin/orders/${order._id}/deliver`,
-  //         {}
-  //       );
-  //       dispatch({ type: 'DELIVER_SUCCESS', payload: data });
-  //       toast.success('Order is delivered');
-  //     } catch (err) {
-  //       dispatch({ type: 'DELIVER_FAIL', payload: getError(err) });
-  //       toast.error(getError(err));
-  //     }
-  //   }
+  async function deliverOrderHandler() {
+    try {
+      dispatch({ type: 'DELIVER_REQUEST' });
+      const { data } = await axios.put(
+        `/api/admin/orders/${order._id}/deliver`,
+        {}
+      );
+      dispatch({ type: 'DELIVER_SUCCESS', payload: data });
+      toast.success('Order is delivered');
+    } catch (err) {
+      dispatch({ type: 'DELIVER_FAIL', payload: getError(err) });
+      toast.error(getError(err));
+    }
+  }
 
   return (
     <Layout title={`Order ${orderId}`}>
@@ -283,7 +283,7 @@ function OrderScreen() {
                     {loadingPay && <div>Loading...</div>}
                   </li>
                 )}
-                {/* {session.user.isAdmin && order.isPaid && !order.isDelivered && (
+                {session.user.isAdmin && order.isPaid && !order.isDelivered && (
                   <li>
                     {loadingDeliver && <div>Loading...</div>}
                     <button
@@ -292,7 +292,7 @@ function OrderScreen() {
                       Deliver Order
                     </button>
                   </li>
-                )} */}
+                )}
               </ul>
             </div>
           </div>
